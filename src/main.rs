@@ -4,7 +4,6 @@ mod cmd;
 mod bombardier;
 mod http;
 mod report;
-mod report_html;
 mod influxdb;
 mod postprocessor;
 
@@ -79,7 +78,7 @@ fn main()  {
         },
         "report-html" => {
             info!("Generating HTML report");
-            match report_html::generate(config.report_file) {
+            match report::generate(config.report_file) {
                 Err(err) => {
                     error!("Error occured while generating report : {}", err);
                     return;
