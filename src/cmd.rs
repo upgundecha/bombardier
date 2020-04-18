@@ -80,6 +80,9 @@ fn create_cmd_app<'a, 'b>() -> App<'a, 'b> {
         .subcommand(SubCommand::with_name("report")
                 .about("Generates the report from report file")
                 .arg(&config_arg))
+        .subcommand(SubCommand::with_name("report-html")
+                .about("Generates a HTML report from report file")
+                .arg(&config_arg))
 }
 
 fn create_config_arg<'a>(arg_name: &'a str) -> Arg<'a, 'a> {
